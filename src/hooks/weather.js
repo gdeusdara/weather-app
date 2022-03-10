@@ -13,7 +13,6 @@ const weatherHooks = () => {
   }, [])
 
   useEffect(() => {
-    console.log(location)
     if (location) {
       dispatch(getWeatherStatus(location))
       dispatch(getAddress(location))
@@ -27,6 +26,12 @@ const weatherHooks = () => {
   useEffect(() => {
     console.log('address', address)
   }, [address])
+
+  return {
+    location,
+    weather,
+    address,
+  }
 
 }
 
