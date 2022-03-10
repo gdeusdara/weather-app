@@ -7,16 +7,17 @@ const getLocationStart = () => {
   };
 };
 
-const getLocationSuccess = (res) => {
+const getLocationSuccess = (location) => {
   return {
     type: types.GET_LOCATION_SUCCESS,
-    res
+    location
   };
 };
 
-const getLocationFailure = () => {
+const getLocationFailure = error => {
   return {
     type: types.GET_LOCATION_FAILURE,
+    error
   };
 };
 
@@ -26,14 +27,21 @@ export function getLocation() {
       dispatch(getLocationStart());
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
-        dispatch(getLocationFailure());
+        dispatch(getLocationFailure('Não foi permitido o acesso á localização'));
+        return
       }
 
       let location = await Location.getCurrentPositionAsync({});
-      console.log(location);
-      dispatch(getLocationSuccess(location));
+
+      if (location.coords) {
+        dispatch(getLocationSuccess(location.coords));
+        return
+      }
+
+      dispatch(getLocationFailure('Não foi possível saber a localização atual, ligue a localização do celular'));
+
     } catch (err) {
-      dispatch(getLocationFailure());
+      dispatch(getLocationFailure('Ocorreu um erro tentar acessar localização'));
     }
   };
 }
