@@ -7,10 +7,10 @@ const getLocationStart = () => {
   };
 };
 
-const getLocationSuccess = (location) => {
+const getLocationSuccess = (data) => {
   return {
     type: types.GET_LOCATION_SUCCESS,
-    location
+    data
   };
 };
 

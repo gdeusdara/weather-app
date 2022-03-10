@@ -1,5 +1,6 @@
-import * as ActionTypes from '../../constants/actionTypes';
-import reducer, { initialState } from './location';
+import basicReducer from '.';
+
+const { reducer, initialState } = basicReducer();
 
 describe('Reducers::Location', () => {
 
@@ -10,52 +11,52 @@ describe('Reducers::Location', () => {
     expect(reducer(undefined, action)).toEqual(expected);
   });
 
-  it('should handle GET_LOCATION_START', () => {
+  it('should handle START', () => {
     const appState = initialState;
 
-    const action = {type: ActionTypes.GET_LOCATION_START};
+    const action = {type: 'START'};
     const expected = {
       loading: true,
-      location: null,
+      data: null,
       errorMessage: ''
     };
 
     expect(reducer(appState, action)).toEqual(expected);
   });
 
-  it('should handle GET_LOCATION_SUCCESS', () => {
+  it('should handle SUCCESS', () => {
     const appState = {
       loading: true,
-      location: null,
+      data: null,
       errorMessage: ''
     };
 
     const action = {
-      type: ActionTypes.GET_LOCATION_SUCCESS,
-      location: { latitude: 0, longitude: 0 },
+      type: 'SUCCESS',
+      data: { test: true },
     };
 
     const expected = {
       loading: false,
-      location: { latitude: 0, longitude: 0 },
+      data: { test: true },
       errorMessage: ''
     };
 
     expect(reducer(appState, action)).toEqual(expected);
   });
 
-  it('should handle GET_LOCATION_FAILURE', () => {
+  it('should handle FAILURE', () => {
     const appState = {
       loading: true,
-      location: null,
+      data: null,
       errorMessage: ''
     };
 
-    const action = {type: ActionTypes.GET_LOCATION_FAILURE, error: 'Test error'};
+    const action = {type: 'FAILURE', error: 'Test error'};
 
     const expected = {
       loading: false,
-      location: null,
+      data: null,
       errorMessage: 'Test error'
     };
 

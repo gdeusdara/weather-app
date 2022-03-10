@@ -4,34 +4,15 @@ import {
   GET_LOCATION_FAILURE,
 } from '../../constants/actionTypes';
 
-const initialState = {
-  loading: false,
-  location: null,
-  errorMessage: ''
-}
+import basicReducer from './basicReducer';
 
-export default function locationReducer(state = initialState, action) {
-  switch (action.type) {
-    case GET_LOCATION_START:
-      return {
-        ...state,
-        loading: true
-      };
-    case GET_LOCATION_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        location: action.location
-      };
-    case GET_LOCATION_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        errorMessage: action.error || ''
-      };
-    default:
-      return state;
-  }
-}
+const { initialState, reducer } = basicReducer({
+  start: GET_LOCATION_START,
+  success: GET_LOCATION_SUCCESS,
+  failure: GET_LOCATION_FAILURE,
+})
+
+export default reducer
 
 export { initialState };
+

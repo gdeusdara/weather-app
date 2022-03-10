@@ -1,20 +1,17 @@
 import {
   GET_ADDRESS_START,
   GET_ADDRESS_SUCCESS,
-  GET_ADDRESS_FAILED,
+  GET_ADDRESS_FAILURE,
 } from '../../constants/actionTypes';
 
-const initialState = {}
+import basicReducer from './basicReducer';
 
-export default function addressReducer(state = initialState, action) {
-  switch (action.type) {
-    case GET_ADDRESS_START:
-      return state;
-    case GET_ADDRESS_SUCCESS:
-      return state;
-    case GET_ADDRESS_FAILED:
-      return state;
-    default:
-      return state;
-  }
-}
+const { initialState, reducer } = basicReducer({
+  start: GET_ADDRESS_START,
+  success: GET_ADDRESS_SUCCESS,
+  failure: GET_ADDRESS_FAILURE
+})
+
+export default reducer
+
+export { initialState };

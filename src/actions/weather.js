@@ -7,10 +7,10 @@ const getWeatherStatusStart = () => {
   };
 };
 
-const getWeatherStatusSuccess = (location) => {
+const getWeatherStatusSuccess = (data) => {
   return {
     type: types.GET_WEATHER_STATUS_SUCCESS,
-    location
+    data
   };
 };
 
@@ -27,7 +27,6 @@ export function getWeatherStatus(location) {
       dispatch(getWeatherStatusStart());
       const response = await api.get(`/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}`);
 
-      console.log(response)
       if (response.status !== 200) {
         dispatch(getWeatherStatusFailure('Não foi permitido o acesso á localização'));
         return
