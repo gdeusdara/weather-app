@@ -4,6 +4,7 @@ const api = axios.create({
   baseURL: process.env.API,
 });
 
+api.defaults.params = {}
 api.defaults.params['appid'] = process.env.SECRET;
 
 export default api;

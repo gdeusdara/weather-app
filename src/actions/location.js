@@ -45,11 +45,3 @@ export function getLocation() {
     }
   };
 }
-
-export function getLocationes(list) {
-  return dispatch => {
-    list.forEach(() => {
-      dispatch(getLocation());
-    });
-  };
-}

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getLocation } from '../actions/location';
+import { getLocation, getWeatherStatus } from '../actions';
 
 const weatherHooks = () => {
   const dispatch = useDispatch();
@@ -12,6 +12,9 @@ const weatherHooks = () => {
 
   useEffect(() => {
     console.log(location)
+    if (location) {
+      dispatch(getWeatherStatus(location))
+    }
   }, [location])
 
 }
