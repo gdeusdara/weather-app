@@ -16,8 +16,8 @@ const theme = {
     night2: '#02013a',
     rain1: '#fcfcfc',
     rain2: '#cac8c8',
-    day1: '#fcfeff',
-    day2: '#96d7ff',
+    day1: '#9B94EE',
+    day2: '#28397e',
   }
 }
 
