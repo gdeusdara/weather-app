@@ -18,12 +18,7 @@ const weatherHooks = () => {
   const addressError = useSelector(state => state.address.errorMessage);
 
   const tryAgain = () => {
-    if (location) {
-      dispatch(getWeatherStatus(location))
-      dispatch(getAddress(location))
-    } else {
-      dispatch(getLocation());
-    }
+    dispatch(getLocation());
   }
 
   useEffect(() => {

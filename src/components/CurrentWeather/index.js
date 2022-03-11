@@ -25,7 +25,7 @@ const CurrentWeather = ({ onPress }) => {
   if(address && address.length && weather) {
     return (
       <Container>
-        <Title>{address[0].local_names.pt || address[0].name}</Title>
+        <Title>{address[0].local_names?.pt || address[0].name}</Title>
         <Subtitle>{address[0].state}, {address[0].country}</Subtitle>
         <Time>{now}</Time>
         <Animation weather={weather.current} size={200} />

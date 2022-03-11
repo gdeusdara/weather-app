@@ -10,6 +10,8 @@ if (Platform.OS === 'android') {
   }
 }
 
+console.disableYellowBox = true;
+
 import {Provider} from 'react-redux';
 import configureStore from './store';
 import Weather from './pages/Weather';

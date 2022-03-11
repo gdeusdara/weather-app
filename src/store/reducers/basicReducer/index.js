@@ -10,13 +10,15 @@ const basicReducer = (actions = { start: 'START', success: 'SUCCESS', failure: '
       case actions.start:
         return {
           ...state,
-          loading: true
+          loading: true,
+          data: null,
         };
       case actions.success:
         return {
           ...state,
           loading: false,
-          data: action.data
+          data: action.data,
+          errorMessage: ''
         };
       case actions.failure:
         return {
