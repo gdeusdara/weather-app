@@ -1,21 +1,21 @@
 import weatherIndicator from '../../utils/weatherIndicator';
-import { clouds, rain, day, night } from "../../assets/lottie";
+import { clouds as cloudsAnimation, rain as rainAnimation, night as nightAnimation, day } from "../../assets/lottie";
 
 import {
   Lottie,
 } from './styles'
 
-const Animation = ({weather, size = 30}) => {
+const Animation = ({weather, size = 30, clouds = true, rain = true, night = true }) => {
 
   const animation = {
-    'Clouds': clouds,
-    'Rain': rain,
-    'Night': night,
+    'Clouds': cloudsAnimation,
+    'Rain': rainAnimation,
+    'Night': nightAnimation,
     'Day': day,
   }
 
   return (
-      <Lottie source={animation[weatherIndicator(weather, true)]} size={size} />
+      <Lottie source={animation[weatherIndicator(weather, clouds, rain, night)]} size={size} />
   )
 };
 

@@ -16,7 +16,7 @@ const ThemeProvider = ({children}) => {
 
   const theme = useMemo(() => {
     if (weather) {
-      return themes[weatherIndicator(weather.current)]
+      return themes[weatherIndicator(weather.current, false, false)]
     }
 
     return dayTheme;

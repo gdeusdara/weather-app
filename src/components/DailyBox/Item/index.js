@@ -14,15 +14,15 @@ const HourlyBoxItem = ({ day }) => {
           <Text>{time}</Text>
         </Content>
         <Content>
-          <Animation weather={day} />
+          <Animation weather={day} night={false} />
         </Content>
         <Content>
           <TextAux>Min</TextAux>
-          <Text>{formatNumber(day.temp.min)}</Text>
+          <Text>{formatNumber(day.temp.min)}º</Text>
         </Content>
         <Content>
           <TextAux>Max</TextAux>
-          <Text>{formatNumber(day.temp.max)}</Text>
+          <Text>{formatNumber(day.temp.max)}º</Text>
         </Content>
       </Container>
     )
