@@ -13,10 +13,7 @@ export const Title = styled.Text`
   padding: 10px;
 `;
 
-export const Content = styled.View`
-  align-items: center;
-  justify-content: center;
-`;
+export const Content = styled.View``;
 
 
 

@@ -5,4 +5,5 @@ export const Container = styled(LinearGradient).attrs(({ theme }) => ({
   colors: [theme.background1, theme.background2]
 }))`
   flex: 1;
+  padding: 10px;
 `;

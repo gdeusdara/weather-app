@@ -1,18 +1,17 @@
 import { useSelector } from 'react-redux';
-import HourlyBoxItem from './Item';
+import DailyBoxItem from './Item';
 import ListBoxTemplate from '../ListBoxTemplate';
 
-const HourlyBox = () => {
+const DailyBox = () => {
   const weather = useSelector(state => state.weather.data);
-  const renderItem = ({ item }) => <HourlyBoxItem hour={item} />
+  const renderItem = ({ item }) => <DailyBoxItem day={item} />
 
   if(weather) {
     return (
       <ListBoxTemplate
-        title="Próximas horas"
-        list={weather.hourly}
+        title="Próximos dias"
+        list={weather.daily}
         renderItem={renderItem}
-        horizontal
       />
     )
   }
@@ -20,4 +19,4 @@ const HourlyBox = () => {
   return null
 };
 
-export default HourlyBox;
+export default DailyBox;

@@ -1,3 +1,4 @@
+import 'moment/locale/pt-br'
 import {Provider} from 'react-redux';
 import configureStore from './store';
 import Weather from './pages/Weather';

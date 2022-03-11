@@ -1,7 +1,7 @@
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import weatherHooks from '../../hooks/weather';
 import { Container } from './styles';
-import { CurrentWeather, HourlyBox } from '../../components';
+import { CurrentWeather, HourlyBox, DailyBox } from '../../components';
 
 export default function App() {
   const {
@@ -16,8 +16,11 @@ export default function App() {
   return (
     <Container>
       <SafeAreaView>
-        <CurrentWeather />
-        <HourlyBox />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <CurrentWeather />
+          <HourlyBox />
+          <DailyBox />
+        </ScrollView>
       </SafeAreaView>
     </Container>
   );
