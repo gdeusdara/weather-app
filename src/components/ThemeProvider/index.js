@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import { dayTheme, nightTheme, rainTheme, cloudsTheme } from '../../constants/theme';
+import { StatusBar } from "react-native";
+import defautTheme, { dayTheme, nightTheme, rainTheme, cloudsTheme } from '../../constants/theme';
 import { ThemeProvider as DefaultThemeProvider } from "styled-components";
 import { useSelector } from "react-redux";
 import weatherIndicator from "../../utils/weatherIndicator";
@@ -22,7 +23,10 @@ const ThemeProvider = ({children}) => {
   }, [weather])
 
   return (
-    <DefaultThemeProvider theme={theme}>{children}</DefaultThemeProvider>
+    <DefaultThemeProvider theme={theme}>
+      <StatusBar barStyle={theme.text === defautTheme.colors.black ? 'dark-content' : 'light-content'} />
+      {children}
+    </DefaultThemeProvider>
   )
 };
 
