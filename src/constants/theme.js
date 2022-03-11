@@ -2,7 +2,7 @@ import { clouds, rain, day, night } from "../assets/lottie";
 
 const theme = {
   fonts: {
-    big: 30,
+    big: 40,
     title: 20,
     subtitle: 18,
     medium: 15,
@@ -17,7 +17,7 @@ const theme = {
     rain1: '#fcfcfc',
     rain2: '#cac8c8',
     day1: '#fcfeff',
-    day2: '#96d7ff'
+    day2: '#96d7ff',
   }
 }
 
@@ -31,16 +31,16 @@ const dayTheme = {
 
 const nightTheme = {
   text: theme.colors.white,
-    background1: theme.colors.night1,
-    background2: theme.colors.night2,
+  background1: theme.colors.night1,
+  background2: theme.colors.night2,
   animation: night,
   message: 'A noite é uma criança...'
 };
 
 const rainTheme = {
   text: theme.colors.white,
-    background1: theme.colors.night1,
-    background2: theme.colors.night2,
+  background1: theme.colors.night1,
+  background2: theme.colors.night2,
   animation: rain,
   message: 'Não se esqueça do guarda chuva'
 };
