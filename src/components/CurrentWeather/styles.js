@@ -9,34 +9,34 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: ${theme.fonts.subtitle};
+  font-size: ${theme.fonts.subtitle}px;
   color: ${({ theme }) => theme.text};
   font-weight: bold;
 `;
 
 export const Subtitle = styled.Text`
-  font-size: ${theme.fonts.mediumTiny};
+  font-size: ${theme.fonts.mediumTiny}px;
   color: ${({ theme }) => theme.text};
 `;
 
 export const Time = styled.Text`
-  font-size: ${theme.fonts.medium};
+  font-size: ${theme.fonts.medium}px;
   color: ${({ theme }) => theme.text};
 `;
 
 export const Temperature = styled.Text`
-  font-size: ${theme.fonts.title};
+  font-size: ${theme.fonts.big}px;
   color: ${({ theme }) => theme.text};
 `;
 
 export const DayType = styled.Text`
-  font-size: ${theme.fonts.medium};
+  font-size: ${theme.fonts.medium}px;
   color: ${({ theme }) => theme.text};
   font-weight: bold;
 `;
 
 export const Description = styled.Text`
-  font-size: ${theme.fonts.mediumTiny};
+  font-size: ${theme.fonts.mediumTiny}px;
   color: ${({ theme }) => theme.text};
 `;
 
@@ -45,7 +45,7 @@ export const Animation = styled(LottieView).attrs(({ theme }) => ({
   loop: true,
   autoPlay: true
 }))`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 `;
 

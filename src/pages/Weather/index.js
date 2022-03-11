@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native';
 import weatherHooks from '../../hooks/weather';
 import { Container } from './styles';
-import { CurrentWeather, ThemeProvider } from '../../components';
+import { CurrentWeather } from '../../components';
 
 export default function App() {
   const {
@@ -14,13 +14,11 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider weather={weather.current}>
-      <Container>
-        <SafeAreaView>
-          <CurrentWeather weather={weather.current} address={address[0]}></CurrentWeather>
-        </SafeAreaView>
-      </Container>
-    </ThemeProvider>
+    <Container>
+      <SafeAreaView>
+        <CurrentWeather />
+      </SafeAreaView>
+    </Container>
   );
 }
 
