@@ -5,8 +5,6 @@ import Animation from '../../Animation';
 import { Container, Content, Text, TextAux } from './styles';
 
 const HourlyBoxItem = ({ day }) => {
-    moment.locale('pt-br')
-
     const time = moment(day.dt * 1000).format('dddd');
     return (
       <Container>

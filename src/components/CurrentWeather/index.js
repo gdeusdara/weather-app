@@ -19,7 +19,6 @@ const CurrentWeather = () => {
   const weather = useSelector(state => state.weather.data);
   const address = useSelector(state => state.address.data);
 
-  moment.locale('pt-br')
   const now = moment(new Date()).format('ll')
 
   if(address && address.length && weather) {

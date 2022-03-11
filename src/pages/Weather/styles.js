@@ -7,3 +7,7 @@ export const Container = styled(LinearGradient).attrs(({ theme }) => ({
   flex: 1;
   padding: 10px;
 `;
+
+export const Line = styled.View`
+  flex-direction: row;
+`
