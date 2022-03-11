@@ -19,11 +19,12 @@ const weatherIndicator = (weather, clouds = true, rain = true, night = true) => 
 
     if (night) {
       const now = Date.now();
-      if (weather.sunrise && weather.sunset && (now < weather.sunrise || now > weather.sunset)) {
+      if (weather.sunrise && weather.sunset && (now < weather.sunrise * 1000 || now > weather.sunset * 1000)) {
         return 'Night';
       }
 
       const time = new Date(weather.dt * 1000).getHours()
+      console.log('Time', time)
       if (time < 6 || time > 18) {
         return 'Night';
       }

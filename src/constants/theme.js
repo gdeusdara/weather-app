@@ -22,7 +22,7 @@ const theme = {
 }
 
 const dayTheme = {
-  text: theme.colors.black,
+  text: theme.colors.white,
   background1: theme.colors.day1,
   background2: theme.colors.day2,
   animation: day,

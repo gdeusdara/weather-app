@@ -4,15 +4,34 @@ import { Container, Line } from './styles';
 import { CurrentWeather, HourlyBox, DailyBox } from '../../components';
 import HumidityBox from '../../components/HumidityBox';
 import WindBox from '../../components/WindBox';
+import InfoScreen from '../../components/InfoScreen';
+import { weatherLoading as weatherLoadingAnimation, error } from '../../assets/lottie';
 
 export default function App() {
   const {
-    weather,
-    address,
+    tryAgain,
+    locationLoading,
+    weatherLoading,
+    addressLoading,
+    locationError,
+    weatherError,
+    addressError,
   } = weatherHooks();
 
-  if (!weather || !address || !address.length) {
-    return null
+  if (locationLoading || weatherLoading || addressLoading) {
+    return (
+      <Container>
+        <InfoScreen source={weatherLoadingAnimation} title="Carregando informações..." />
+      </Container>
+    )
+  }
+
+  if (locationError || weatherError || addressError) {
+    return (
+      <Container>
+        <InfoScreen source={error} title={locationError || weatherError || addressError} onPress={tryAgain} />
+      </Container>
+    )
   }
 
   return (

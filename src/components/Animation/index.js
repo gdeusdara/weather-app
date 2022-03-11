@@ -1,9 +1,6 @@
 import weatherIndicator from '../../utils/weatherIndicator';
 import { clouds as cloudsAnimation, rain as rainAnimation, night as nightAnimation, day } from "../../assets/lottie";
-
-import {
-  Lottie,
-} from './styles'
+import { Lottie } from '../BasicCompoents';
 
 const Animation = ({weather, size = 30, clouds = true, rain = true, night = true }) => {
 

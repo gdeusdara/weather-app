@@ -5,6 +5,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 20px 0px;
 `;
 
 export const Title = styled.Text`
@@ -16,6 +17,7 @@ export const Title = styled.Text`
 export const Subtitle = styled.Text`
   font-size: ${theme.fonts.mediumTiny}px;
   color: ${({ theme }) => theme.text};
+  margin: 5px 0px 10px;
 `;
 
 export const Time = styled.Text`
@@ -32,6 +34,7 @@ export const DayType = styled.Text`
   font-size: ${theme.fonts.medium}px;
   color: ${({ theme }) => theme.text};
   font-weight: bold;
+  margin: 10px;
 `;
 
 export const Description = styled.Text`
