@@ -10,6 +10,8 @@ import { weatherLoading as weatherLoadingAnimation, error } from '../../assets/l
 export default function App() {
   const {
     tryAgain,
+    weather,
+    location,
     locationLoading,
     weatherLoading,
     addressLoading,
@@ -34,11 +36,19 @@ export default function App() {
     )
   }
 
+  if (!weather || !location) {
+    return (
+      <Container>
+        <InfoScreen source={weatherLoadingAnimation} title="Carregando informações..." />
+      </Container>
+    )
+  }
+
   return (
     <Container>
       <SafeAreaView>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <CurrentWeather />
+          <CurrentWeather onPress={tryAgain} />
           <HourlyBox />
           <DailyBox />
           <Line>

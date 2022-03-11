@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { LayoutAnimation } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { getLocation, getWeatherStatus, getAddress } from '../actions';
 
@@ -43,6 +44,10 @@ const weatherHooks = () => {
   useEffect(() => {
     console.log('address', address)
   }, [address])
+
+  useEffect(() => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+  }, [locationLoading, weatherLoading, addressLoading])
 
   return {
     location,

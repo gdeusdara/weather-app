@@ -24,7 +24,7 @@ const weatherIndicator = (weather, clouds = true, rain = true, night = true) => 
       }
 
       const time = new Date(weather.dt * 1000).getHours()
-      console.log('Time', time)
+
       if (time < 6 || time > 18) {
         return 'Night';
       }
